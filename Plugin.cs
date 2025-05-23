@@ -1,8 +1,9 @@
-﻿using BepInEx;
+using BepInEx;
 using System;
 using System.ComponentModel;
 using UnityEngine;
 using Utilla;
+using Utilla.Attributes;
 
 namespace MarryPoppins
 {
@@ -35,10 +36,19 @@ namespace MarryPoppins
         {
             if (inRoom)
             {
-                if (umbrellaOpened) Physics.gravity = new Vector3(0f, -3.0f, 0f);
-                else if (!umbrellaOpened) resetGravity();
+                if (umbrellaOpened)
+                {
+                    Physics.gravity = new Vector3(0f, -3.0f, 0f);
+                }
+                else
+                {
+                    resetGravity();
+                }
             }
-            else if (!inRoom) resetGravity();
+            else
+            {
+                resetGravity();
+            }
         }
 
         [ModdedGamemodeJoin]
