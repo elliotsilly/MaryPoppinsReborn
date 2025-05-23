@@ -1,17 +1,11 @@
-﻿using HarmonyLib;
-using System;
+using HarmonyLib;
 using System.Reflection;
 
 namespace MarryPoppins
 {
-    /// <summary>
-    /// This class handles applying harmony patches to the game.
-    /// You should not need to modify this class.
-    /// </summary>
-    public class HarmonyPatches
+    public static class HarmonyPatches
     {
         private static Harmony instance;
-
         public static bool IsPatched { get; private set; }
         public const string InstanceId = PluginInfo.GUID;
 
